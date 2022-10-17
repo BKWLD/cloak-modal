@@ -1,11 +1,11 @@
 {
-	"name": "@bkwld/cloak-dialog",
+	"name": "@bkwld/cloak-modal",
 	"version": "0.1.1",
-	"description": "Vue component for opening a dialogs & locking the viewport",
-	"repository": "git@github.com:BKWLD/cloak-dialog.git",
+	"description": "Vue component for opening a modals & locking the viewport",
+	"repository": "git@github.com:BKWLD/cloak-modal.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
-	"main": "components/cloak-dialog.js",
+	"main": "components/cloak-modal.js",
 	"scripts": {
 		"dev": "nuxt dev demo",
 		"build": "nuxt build demo",

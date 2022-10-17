@@ -1,6 +1,6 @@
 <template lang='pug'>
 
-.dialog
+.cloak-modal
 
 	transition(name='fade')
 		shade(

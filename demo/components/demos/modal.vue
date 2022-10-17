@@ -21,18 +21,18 @@ div
         option(value='false') False (default)
         option(value='true') True
 
-  h3.style-h3 Mount Dialog
+  h3.style-h3 Mount Modal
   br
-  button(@click='open("dialog")') Open
+  button(@click='open()') Open
 
 </template>
 
 <script lang='coffee'>
-import Dialog from '/components/buk-dialog'
+import Modal from '/components/cloak-modal'
 
 export default
 
-  components: { Dialog }
+  components: { Modal }
 
   data: ->
     opened: false
@@ -41,7 +41,7 @@ export default
 
   methods:
     open: () ->
-      await @$mountOnBody Dialog,
+      await @$mountOnBody Modal,
         parent: @
         propsData:
           position: @position

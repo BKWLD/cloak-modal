@@ -1,6 +1,6 @@
 <template lang='pug'>
   div
-    h3 Dialog Contents
+    h3 Modal Contents
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia venenatis lectus, ac cursus ligula. Sed nec enim urna. Nullam congue eros elit, eget consectetur nunc accumsan quis.
     button Button
 </template>

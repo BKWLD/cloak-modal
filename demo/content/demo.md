@@ -1,6 +1,6 @@
-# [cloak-dialog](https://github.com/BKWLD/cloak-dialog)
+# [cloak-modal](https://github.com/BKWLD/cloak-modal)
 
-<demos-dialog></demos-dialog>
+<demos-modal></demos-modal>
 
 ## Markup to make the page long to show scroll locking
 ===================

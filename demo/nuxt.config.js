@@ -13,7 +13,7 @@ export default {
 
 		// Boilerplate settings
 		boilerplate: {
-			siteName: 'cloak-dialog demo',
+			siteName: 'cloak-modal demo',
 		},
 	},
 

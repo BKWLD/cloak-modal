@@ -1,21 +1,21 @@
-<!-- # cloak-dialog
+<!-- # cloak-modal
 
 Vue component for triggering animations, adding classes, firing events, and syncing slot variables based on visibility in the viewport.
 
-- [View demo](https://cloak-dialog.netlify.app)
-- [Edit CodeSandbox](https://githubbox.com/BKWLD/cloak-dialog)
+- [View demo](https://cloak-modal.netlify.app)
+- [Edit CodeSandbox](https://githubbox.com/BKWLD/cloak-modal)
 
 ## Install
 
 ```sh
-yarn add @bkwld/cloak-dialog
+yarn add @bkwld/cloak-modal
 ```
 
 ### Default
 
 ```js
-import Dialog from '@bkwld/cloak-dialog'
-Vue.component 'dialog', Dialog
+import Modal from '@bkwld/cloak-modal'
+Vue.component 'modal', Modal
 ```
 
 ### Nuxt
@@ -23,17 +23,17 @@ Vue.component 'dialog', Dialog
 ```js
 // nuxt.config.js
 export default {
-  buildModules: [ '@bkwld/cloak-dialog/nuxt' ]
+  buildModules: [ '@bkwld/cloak-modal/nuxt' ]
 }
 ```
 
 ## Usage
 
-Use the `animate` prop to have `cloak-dialog` reset CSS animations when the component does not mount within the viewport.  When the user scrolls far enough to reveal the component, the animations will begin from the start. This is the primary use case of `cloak-dialog`.
+Use the `animate` prop to have `cloak-modal` reset CSS animations when the component does not mount within the viewport.  When the user scrolls far enough to reveal the component, the animations will begin from the start. This is the primary use case of `cloak-modal`.
 
 ```vue
 <template>
-  <dialog></dialog>
+  <modal></modal>
 </template>
 <style>
 .menu {
@@ -42,5 +42,5 @@ Use the `animate` prop to have `cloak-dialog` reset CSS animations when the comp
 </style>
 ```
 
-For more examples, check out [the demo](https://cloak-dialog.netlify.app).
+For more examples, check out [the demo](https://cloak-modal.netlify.app).
  -->
