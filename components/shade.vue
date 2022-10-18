@@ -14,11 +14,11 @@ export default
 			default: '#999999'
 
 		closeable:
-			type: Boolean
-			default: true
+			type: String
+			default: 'true'
 
 	methods:
-		close: -> if(@closeable) then @$emit 'close'
+		close: -> if(@closeable == 'true') then @$emit 'close'
 
 </script>
 

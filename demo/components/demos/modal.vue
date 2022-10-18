@@ -21,6 +21,26 @@ div
         option(value='false') False (default)
         option(value='true') True
 
+    .example-wrap
+      h3.style-h3 Closeable
+      select(v-model='closeable')
+        option(value='true') True (default)
+        option(value='false') False
+
+    .example-wrap
+      h3.style-h3 Radius
+      select(v-model='radius')
+        option(value='0') 0px (default)
+        option(value='10') 10px
+        option(value='30') 30px
+
+    .example-wrap
+      h3.style-h3 Margin
+      select(v-model='margin')
+        option(value='0') 0px (default)
+        option(value='10') 10px
+        option(value='30') 30px
+
   h3.style-h3 Mount Modal
   br
   button(@click='open()') Open
@@ -38,6 +58,9 @@ export default
     opened: false
     position: 'center'
     fill: 'false'
+    closeable: 'true'
+    radius: '0'
+    margin: '0'
 
   methods:
     open: () ->
@@ -46,6 +69,9 @@ export default
         propsData:
           position: @position
           fill: @fill
+          closeable: @closeable
+          radius: @radius
+          margin: @margin
 
 </script>
 

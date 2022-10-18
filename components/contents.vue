@@ -1,8 +1,10 @@
 <template lang='pug'>
 
 	//- TODO: better naming conventions
-	.wrapper(:class='classes')
-		.close(v-if='closeable' @click='close()') Close
+	.wrapper(:class='classes' :style='styles')
+
+		//- TODO: X icon
+		.close(v-if='closeable == "true"' @click='close()') Close
 
 		.scroller(ref='scroller')
 			slot
@@ -16,9 +18,11 @@ export default
 	# props should be passed as a group...
 
 	props:
+
+		# TODO: make bookean
 		closeable:
-			type: Boolean
-			default: true
+			type: String
+			default: 'true'
 
 		fill:
 			type: Boolean
@@ -30,12 +34,12 @@ export default
 			validator: (val) -> val in ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'top', 'bottom', 'center']
 
 		radius:
-			type: Number
-			default: 0
+			type: String
+			default: '0'
 
-		gutter:
-			type: Number
-			default: 0
+		margin:
+			type: String
+			default: '0'
 
 		scrollLock:
 			type: Boolean
@@ -52,6 +56,10 @@ export default
 			'fill' if @fill
 		]
 
+		styles: ->
+			margin: "#{@margin}px"
+			borderRadius: "#{@radius}px"
+
 	methods:
 		close: ->
 			if @closeable then @$emit 'close'
@@ -66,8 +74,6 @@ gutter = 40px
 .wrapper
 	position fixed
 	background #101010
-	border-radius 10px
-	margin 20px
 	z-index 2
 	width calc(100% - 40px)
 	max-width 400px
@@ -106,7 +112,7 @@ gutter = 40px
 			top 0
 			bottom 0
 			transform translateY(0)
-			height calc(100vh - 40px)
+			height 100vh
 
 	&.top
 		top 0
@@ -118,8 +124,8 @@ gutter = 40px
 			right 0
 			left 0
 			transform translateX(0)
-			width calc(100vw - 40px)
-			max-width calc(100vw - 40px)
+			width 100vw
+			max-width 100vw
 
 	&.bottom
 		bottom 0
@@ -131,8 +137,8 @@ gutter = 40px
 			right 0
 			left 0
 			transform translateX(0)
-			width calc(100vw - 40px)
-			max-width calc(100vw - 40px)
+			width 100vw
+			max-width 100vw
 
 	&.center
 		top 50%
@@ -140,12 +146,13 @@ gutter = 40px
 		transform translate(-50%, -50%)
 
 .full .wrapper
-	height calc(100vh - 40px)
+	height 100vh
 
 .close
 	position absolute
 	top 20px
 	right 20px
+	cursor pointer
 
 .scroller
 	height 100%

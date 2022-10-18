@@ -18,7 +18,7 @@
 			:closeable='closeable'
 			:position='position'
 			:radius='radius'
-			:gutter='gutter'
+			:margin='margin'
 			:scrollLock='scrollLock'
 			:transition='transition')
 
@@ -44,8 +44,8 @@ export default
 
 	props:
 		closeable:
-			type: Boolean
-			default: true
+			type: String
+			default: 'true'
 
 		bkgd:
 			type: String
@@ -66,12 +66,12 @@ export default
 			default: true
 
 		radius:
-			type: Number
-			default: 0
+			type: String
+			default: '0'
 
-		gutter:
-			type: Number
-			default: 0
+		margin:
+			type: String
+			default: '0'
 
 		scrollLock:
 			type: Boolean
