@@ -41,6 +41,18 @@ div
         option(value='10') 10px
         option(value='30') 30px
 
+    .example-wrap
+      h3.style-h3 Transition Type
+
+    .example-wrap
+      h3.style-h3 Scroll Lock
+
+    .example-wrap
+      h3.style-h3 Has Overlay
+
+    .example-wrap
+      h3.style-h3 Overlay Color
+
   h3.style-h3 Mount Modal
   br
   button(@click='open()') Open
