@@ -101,6 +101,13 @@ gutter = 40px
 		left 0
 		transform translateY(-50%)
 
+		&.fill
+			left 0
+			top 0
+			bottom 0
+			transform translateY(0)
+			height 100vh
+
 	&.right
 		top 50%
 		right 0
@@ -144,6 +151,11 @@ gutter = 40px
 		top 50%
 		left 50%
 		transform translate(-50%, -50%)
+
+		&.fill
+			width 100vw
+			max-width 100vw
+			height 100vh
 
 .full .wrapper
 	height 100vh
