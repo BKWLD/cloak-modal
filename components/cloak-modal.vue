@@ -71,7 +71,7 @@ export default
 
 		margin:
 			type: String
-			default: '0'
+			default: 'true'
 
 		scrollLock:
 			type: Boolean

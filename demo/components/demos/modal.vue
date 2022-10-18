@@ -37,9 +37,8 @@ div
     .example-wrap
       h3.style-h3 Margin
       select(v-model='margin')
-        option(value='0') 0px (default)
-        option(value='10') 10px
-        option(value='30') 30px
+        option(value='true') True (default)
+        option(value='false') False
 
     .example-wrap
       h3.style-h3 Transition Type
@@ -52,6 +51,9 @@ div
 
     .example-wrap
       h3.style-h3 Overlay Color
+
+    .example-wrap
+      h3.style-h3 Timer to Remove
 
   h3.style-h3 Mount Modal
   br
@@ -72,7 +74,7 @@ export default
     fill: 'false'
     closeable: 'true'
     radius: '0'
-    margin: '0'
+    margin: 'true'
 
   methods:
     open: () ->

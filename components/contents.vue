@@ -39,7 +39,7 @@ export default
 
 		margin:
 			type: String
-			default: '0'
+			default: 'true'
 
 		scrollLock:
 			type: Boolean
@@ -54,10 +54,10 @@ export default
 		classes: -> [
 			@position
 			'fill' if @fill
+			'margin' if @margin == 'true'
 		]
 
 		styles: ->
-			margin: "#{@margin}px"
 			borderRadius: "#{@radius}px"
 
 	methods:
@@ -69,7 +69,7 @@ export default
 <style lang='stylus' scoped>
 
 // TODO: vars.styl
-gutter = 40px
+gutter = 20px
 
 .wrapper
 	position fixed
@@ -108,6 +108,12 @@ gutter = 40px
 			transform translateY(0)
 			height 100vh
 
+			&.margin
+				left gutter
+				top gutter
+				bottom gutter
+				height calc(100vh - 40px)
+
 	&.right
 		top 50%
 		right 0
@@ -120,6 +126,12 @@ gutter = 40px
 			bottom 0
 			transform translateY(0)
 			height 100vh
+
+			&.margin
+				right gutter
+				top gutter
+				bottom gutter
+				height calc(100vh - 40px)
 
 	&.top
 		top 0
@@ -134,6 +146,13 @@ gutter = 40px
 			width 100vw
 			max-width 100vw
 
+			&.margin
+				top gutter
+				right gutter
+				left gutter
+				width calc(100vw - 40px)
+				max-width calc(100vw - 40px)
+
 	&.bottom
 		bottom 0
 		left 50%
@@ -147,6 +166,13 @@ gutter = 40px
 			width 100vw
 			max-width 100vw
 
+			&.margin
+				bottom gutter
+				right gutter
+				left gutter
+				width clac(100vw - 40px)
+				max-width calc(100vw - 40px)
+
 	&.center
 		top 50%
 		left 50%
@@ -154,8 +180,11 @@ gutter = 40px
 
 		&.fill
 			width 100vw
-			max-width 100vw
 			height 100vh
+
+			&.margin
+				width clac(100vw - 40px)
+				height calc(100vh - 40px)
 
 .full .wrapper
 	height 100vh
