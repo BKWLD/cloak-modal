@@ -40,20 +40,37 @@ div
         option(value='true') True (default)
         option(value='false') False
 
-    .example-wrap
-      h3.style-h3 Transition Type
+  hr
+
+  .examples
+    //- .example-wrap
+    //-   h3.style-h3 Transition Type
 
     .example-wrap
       h3.style-h3 Scroll Lock
+      select(v-model='scrollLock')
+        option(value='true') True (default)
+        option(value='false') False
 
     .example-wrap
       h3.style-h3 Has Overlay
+      select(v-model='overlay')
+        option(value='true') True (default)
+        option(value='false') False
 
     .example-wrap
       h3.style-h3 Overlay Color
+      select(v-model='overlayColor')
+        option(value='dark') Dark (default)
+        option(value='light') Light
 
     .example-wrap
       h3.style-h3 Timer to Remove
+      select(v-model='autoClose')
+        option(value='none') None (default)
+        option(value='1') 1s
+        option(value='5') 5s
+        option(value='10') 10s
 
   h3.style-h3 Mount Modal
   br
@@ -75,6 +92,10 @@ export default
     closeable: 'true'
     radius: '0'
     margin: 'true'
+    overlay: 'true'
+    overlayColor: 'dark'
+    scrollLock: 'true'
+    autoClose: 'none'
 
   methods:
     open: () ->
@@ -86,6 +107,10 @@ export default
           closeable: @closeable
           radius: @radius
           margin: @margin
+          overlay: @overlay
+          overlayColor: @overlayColor
+          scrollLock: @scrollLock
+          autoClose: @autoClose
 
 </script>
 

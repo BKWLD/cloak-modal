@@ -2,12 +2,12 @@
 
 .cloak-modal
 
-	transition(name='fade')
+	transition(name='fade' v-if='overlay == "true"')
 		shade(
 			v-if='shade && opened'
 			@close='close()'
 			:closeable='closeable'
-			:bkgd='bkgd')
+			:overlayColor='overlayColor')
 
 	transition(name='fade')
 		contents(
@@ -74,32 +74,52 @@ export default
 			default: 'true'
 
 		scrollLock:
-			type: Boolean
-			deafult: true
+			type: String
+			default: 'true'
+
+		overlay:
+			type: String
+			default: 'true'
+
+		overlayColor:
+			type: String
+			default: 'dark'
 
 		transition:
 			type: String
 			default: "fade"
 			validator: (val) -> val in ['fade', 'slide', 'bounce']
 
+		autoClose:
+			type: String
+			default: 'none'
+
 	data: -> opened: false
 
-	mounted: -> @open()
+	mounted: ->
+		@open()
+		if @autoClose != 'none'
+			@$wait @autoCloseSeconds, =>
+				@close()
 
 	computed:
 		fillStyle: ->
 			if @fill == 'true' then return true
 			else return false
 
+		autoCloseSeconds: ->
+			if @autoClose != 'none'
+				return parseInt(@autoClose)*1000
+
 	methods:
 		open: ->
 			@opened = true
-			disableBodyScroll this.$refs.contents.$refs.scroller
+			if @scrollLock == 'true' then disableBodyScroll this.$refs.contents.$refs.scroller
 
 		close: ->
 			@opened = false
 			@$wait 200, =>
-				clearAllBodyScrollLocks()
+				if @scrollLock == 'true' then clearAllBodyScrollLocks()
 				@$el.remove()
 				@$destroy()
 

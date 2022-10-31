@@ -1,6 +1,6 @@
 <template lang='pug'>
 
-.shade(@click='close()')
+.shade(:class='classes' @click='close()')
 
 </template>
 
@@ -9,13 +9,18 @@
 export default
 
 	props:
-		bkgd:
+		overlayColor:
 			type: String
-			default: '#999999'
+			default: 'dark'
 
 		closeable:
 			type: String
 			default: 'true'
+
+	computed:
+		classes: -> [
+			"overlay-color-#{@overlayColor}"
+		]
 
 	methods:
 		close: -> if(@closeable == 'true') then @$emit 'close'
@@ -27,11 +32,16 @@ export default
 .shade
 	position fixed
 	z-index 1
-	background #333333
 	opacity .5
 	top 0
 	left 0
 	width 100vw
 	height 100vh
+
+	&.overlay-color-dark
+		background #303030
+
+	&.overlay-color-light
+		background #f0f0f0
 
 </style>

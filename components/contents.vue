@@ -41,10 +41,6 @@ export default
 			type: String
 			default: 'true'
 
-		scrollLock:
-			type: Boolean
-			deafult: true
-
 		transition:
 			type: String
 			default: "fade"
@@ -84,22 +80,41 @@ gutter = 20px
 		top 0
 		left 0
 
+		&.margin
+			top gutter
+			left gutter
+
 	&.top-right
 		top 0
 		right 0
+
+		&.margin
+			right gutter
+			top gutter
 
 	&.bottom-left
 		bottom 0
 		left 0
 
+		&.margin
+			left gutter
+			bottom gutter
+
 	&.bottom-right
 		bottom 0
 		right 0
+
+		&.margin
+			right gutter
+			bottom gutter
 
 	&.left
 		top 50%
 		left 0
 		transform translateY(-50%)
+
+		&.margin
+			left gutter
 
 		&.fill
 			left 0
@@ -109,7 +124,6 @@ gutter = 20px
 			height 100vh
 
 			&.margin
-				left gutter
 				top gutter
 				bottom gutter
 				height calc(100vh - 40px)
@@ -118,6 +132,9 @@ gutter = 20px
 		top 50%
 		right 0
 		transform translateY(-50%)
+
+		&.margin
+			right gutter
 
 		// TODO: convert to variable gutter
 		&.fill
@@ -128,7 +145,6 @@ gutter = 20px
 			height 100vh
 
 			&.margin
-				right gutter
 				top gutter
 				bottom gutter
 				height calc(100vh - 40px)
@@ -137,6 +153,9 @@ gutter = 20px
 		top 0
 		left 50%
 		transform translateX(-50%)
+
+		&.margin
+			top gutter
 
 		// TODO: convert to variable gutter
 		&.fill
@@ -147,7 +166,6 @@ gutter = 20px
 			max-width 100vw
 
 			&.margin
-				top gutter
 				right gutter
 				left gutter
 				width calc(100vw - 40px)
@@ -158,6 +176,9 @@ gutter = 20px
 		left 50%
 		transform: translateX(-50%)
 
+		&.margin
+			bottom gutter
+
 		// TODO: convert to variable gutter
 		&.fill
 			right 0
@@ -167,7 +188,6 @@ gutter = 20px
 			max-width 100vw
 
 			&.margin
-				bottom gutter
 				right gutter
 				left gutter
 				width clac(100vw - 40px)
@@ -177,6 +197,9 @@ gutter = 20px
 		top 50%
 		left 50%
 		transform translate(-50%, -50%)
+
+		&.margin
+			margin 20px
 
 		&.fill
 			width 100vw
