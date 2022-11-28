@@ -5,7 +5,7 @@
 	"repository": "git@github.com:BKWLD/cloak-modal.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
-	"main": "components/cloak-modal.js",
+	"main": "nuxt.js",
 	"scripts": {
 		"dev": "nuxt dev demo",
 		"build": "nuxt build demo",
