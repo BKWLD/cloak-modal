@@ -32,16 +32,15 @@ export default
 .shade
 	position fixed
 	z-index 1
-	opacity .5
 	top 0
 	left 0
 	width 100vw
 	height 100vh
 
 	&.overlay-color-dark
-		background #303030
+		background rgba(#303030, 0.5)
 
 	&.overlay-color-light
-		background #f0f0f0
+		background rgba(#f0f0f0, 0.5)
 
 </style>
