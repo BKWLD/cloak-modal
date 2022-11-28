@@ -86,7 +86,7 @@ export default
 		transition:
 			type: String
 			default: "fade"
-			validator: (val) -> val in ['fade', 'slide', 'bounce']
+			validator: (val) -> val in ['', 'fade', 'slide', 'bounce']
 
 		autoClose:
 			type: String
