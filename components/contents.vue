@@ -7,7 +7,7 @@
 		.scroller(ref='scroller'): slot
 
 		//- Make close icon slot-able
-		.close(v-if='closeable == "true"' @click='close()')
+		.close(v-if='closeable' @click='close()')
 			slot(name='close')
 
 				//- Default close icon
@@ -20,42 +20,19 @@
 
 export default
 
-	# props should be passed as a group...
-
 	props:
-
-		# TODO: make bookean
-		closeable:
-			type: String
-			default: 'true'
-
-		fill:
-			type: Boolean
-			default: false
-
-		position:
-			type: String,
-			default: 'center'
-			validator: (val) -> val in ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'top', 'bottom', 'center']
-
-		radius:
-			type: String
-			default: '0'
-
-		margin:
-			type: String
-			default: 'true'
-
-		transition:
-			type: String
-			default: "fade"
-			validator: (val) -> val in ['fade', 'slide', 'bounce']
+		closeable: Boolean
+		fill: Boolean
+		position: String
+		radius: String
+		margin: Boolean
+		transition: String
 
 	computed:
 		classes: -> [
 			@position
-			'fill' if @fill
-			'margin' if @margin == 'true'
+			fill: @fill
+			margin: @margin
 		]
 
 		styles: ->
@@ -191,7 +168,7 @@ gutter = 20px
 			&.margin
 				right gutter
 				left gutter
-				width clac(100vw - 40px)
+				width calc(100vw - 40px)
 				max-width calc(100vw - 40px)
 
 	&.center
@@ -207,7 +184,7 @@ gutter = 20px
 			height 100vh
 
 			&.margin
-				width clac(100vw - 40px)
+				width calc(100vw - 40px)
 				height calc(100vh - 40px)
 
 .full .contents
