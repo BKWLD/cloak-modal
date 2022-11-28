@@ -18,14 +18,14 @@ div
     .example-wrap
       h3.style-h3 Fill
       select(v-model='fill')
-        option(value='false') False (default)
-        option(value='true') True
+        option(:value='false') False (default)
+        option(:value='true') True
 
     .example-wrap
       h3.style-h3 Closeable
       select(v-model='closeable')
-        option(value='true') True (default)
-        option(value='false') False
+        option(:value='true') True (default)
+        option(:value='false') False
 
     .example-wrap
       h3.style-h3 Radius
@@ -37,8 +37,8 @@ div
     .example-wrap
       h3.style-h3 Margin
       select(v-model='margin')
-        option(value='true') True (default)
-        option(value='false') False
+        option(:value='true') True (default)
+        option(:value='false') False
 
   hr
 
@@ -49,14 +49,14 @@ div
     .example-wrap
       h3.style-h3 Scroll Lock
       select(v-model='scrollLock')
-        option(value='true') True (default)
-        option(value='false') False
+        option(:value='true') True (default)
+        option(:value='false') False
 
     .example-wrap
       h3.style-h3 Has Overlay
       select(v-model='overlay')
-        option(value='true') True (default)
-        option(value='false') False
+        option(:value='true') True (default)
+        option(:value='false') False
 
     .example-wrap
       h3.style-h3 Overlay Color
@@ -85,13 +85,13 @@ export default
   data: ->
     opened: false
     position: 'center'
-    fill: 'false'
-    closeable: 'true'
+    fill: false
+    closeable: true
     radius: '0'
-    margin: 'true'
-    overlay: 'true'
+    margin: true
+    overlay: true
     overlayColor: 'dark'
-    scrollLock: 'true'
+    scrollLock: true
     autoClose: 'none'
 
   methods:

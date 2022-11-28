@@ -5,22 +5,26 @@
 	transition(name='fade' v-if='overlay == "true"')
 		shade(
 			v-if='shade && opened'
-			@close='close()'
-			:closeable='closeable'
-			:overlayColor='overlayColor')
+			@close='close'
+			v-bind=`{
+				closeable,
+				overlayColor,
+			}`)
 
 	transition(name='fade')
 		contents(
 			v-show='opened'
 			ref='contents'
-			@close='close()'
-			:fill='fillStyle'
-			:closeable='closeable'
-			:position='position'
-			:radius='radius'
-			:margin='margin'
-			:scrollLock='scrollLock'
-			:transition='transition')
+			@close='close'
+			v-bind=`{
+				closeable,
+				fill,
+				margin,
+				position,
+				radius,
+				scrollLock,
+				transition,
+			}`)
 
 			slot
 
@@ -34,28 +38,31 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 export default
 
 	components: {
-		Shade,
+		Shade
 		Contents
 	}
 
 	props:
+
 		closeable:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		bkgd:
 			type: String
 			default: '#999999'
 
-		# TODO: convert to boolean
 		fill:
-			type: String
-			default: 'false'
+			type: Boolean
+			default: false
 
 		position:
 			type: String,
 			default: 'center'
-			validator: (val) -> val in ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'top', 'bottom', 'center']
+			validator: (val) -> val in [
+				'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left',
+				'right', 'top', 'bottom', 'center'
+			]
 
 		shade:
 			type: Boolean
@@ -66,16 +73,16 @@ export default
 			default: '0'
 
 		margin:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		scrollLock:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		overlay:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		overlayColor:
 			type: String
@@ -99,23 +106,19 @@ export default
 				@close()
 
 	computed:
-		fillStyle: ->
-			if @fill == 'true' then return true
-			else return false
 
 		autoCloseSeconds: ->
-			if @autoClose != 'none'
-				return parseInt(@autoClose)*1000
+			parseInt(@autoClose) * 1000 if @autoClose != 'none'
 
 	methods:
 		open: ->
 			@opened = true
-			if @scrollLock == 'true' then disableBodyScroll this.$refs.contents.$refs.scroller
+			if @scrollLock then disableBodyScroll this.$refs.contents.$refs.scroller
 
 		close: ->
 			@opened = false
 			@$wait 200, =>
-				if @scrollLock == 'true' then clearAllBodyScrollLocks()
+				if @scrollLock then clearAllBodyScrollLocks()
 				@$el.remove()
 				@$destroy()
 

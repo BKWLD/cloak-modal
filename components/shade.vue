@@ -14,8 +14,8 @@ export default
 			default: 'dark'
 
 		closeable:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 	computed:
 		classes: -> [
@@ -23,7 +23,8 @@ export default
 		]
 
 	methods:
-		close: -> if(@closeable == 'true') then @$emit 'close'
+
+		close: -> if @closeable then @$emit 'close'
 
 </script>
 

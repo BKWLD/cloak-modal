@@ -7,7 +7,7 @@
 		.scroller(ref='scroller'): slot
 
 		//- Make close icon slot-able
-		.close(v-if='closeable == "true"' @click='close()')
+		.close(v-if='closeable' @click='close()')
 			slot(name='close')
 
 				//- Default close icon
@@ -20,14 +20,11 @@
 
 export default
 
-	# props should be passed as a group...
-
 	props:
 
-		# TODO: make bookean
 		closeable:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		fill:
 			type: Boolean
@@ -43,8 +40,8 @@ export default
 			default: '0'
 
 		margin:
-			type: String
-			default: 'true'
+			type: Boolean
+			default: true
 
 		transition:
 			type: String
@@ -54,8 +51,8 @@ export default
 	computed:
 		classes: -> [
 			@position
-			'fill' if @fill
-			'margin' if @margin == 'true'
+			fill: @fill
+			margin: @margin
 		]
 
 		styles: ->
