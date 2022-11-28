@@ -2,7 +2,7 @@
 
 .cloak-modal
 
-	transition(name='fade' v-if='overlay')
+	transition(:name='transition' v-if='overlay')
 		shade(
 			v-if='opened'
 			@close='close'
@@ -11,7 +11,7 @@
 				overlayColor,
 			}`)
 
-	transition(name='fade')
+	transition(:name='transition')
 		contents(
 			v-show='opened'
 			ref='contents'
