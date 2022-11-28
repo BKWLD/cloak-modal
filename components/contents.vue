@@ -224,6 +224,6 @@ gutter = 20px
 
 .scroller
 	height 100%
-
+	overflow auto
 
 </style>
