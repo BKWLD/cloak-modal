@@ -19,6 +19,7 @@ export default
 .modal
   background #101010
   width 400px
+  height 100%
   max-width calc(100vw - 40px)
   box-shadow 0 0 30px rgba(0, 0, 0, .2)
   padding 30px
