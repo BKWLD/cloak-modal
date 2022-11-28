@@ -1,5 +1,5 @@
 {
-	"name": "@bkwld/cloak-modal",
+	"name": "@cloak-app/modal",
 	"version": "0.1.1",
 	"description": "Vue component for opening a modals & locking the viewport",
 	"repository": "git@github.com:BKWLD/cloak-modal.git",

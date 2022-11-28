@@ -8,13 +8,13 @@ Vue component for triggering animations, adding classes, firing events, and sync
 ## Install
 
 ```sh
-yarn add @bkwld/cloak-modal
+yarn add @cloak-app/modal
 ```
 
 ### Default
 
 ```js
-import Modal from '@bkwld/cloak-modal'
+import Modal from '@cloak-app/modal'
 Vue.component 'modal', Modal
 ```
 
@@ -23,7 +23,7 @@ Vue.component 'modal', Modal
 ```js
 // nuxt.config.js
 export default {
-  buildModules: [ '@bkwld/cloak-modal/nuxt' ]
+  buildModules: [ '@cloak-app/modal/nuxt' ]
 }
 ```
 
