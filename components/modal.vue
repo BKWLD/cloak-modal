@@ -17,6 +17,7 @@
 			ref='contents'
 			@close='close'
 			v-bind=`{
+				background,
 				closeable,
 				fill,
 				margin,
@@ -48,9 +49,7 @@ export default
 			type: Boolean
 			default: true
 
-		bkgd:
-			type: String
-			default: '#999999'
+		background: String
 
 		fill:
 			type: Boolean

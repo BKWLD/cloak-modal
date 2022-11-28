@@ -21,6 +21,7 @@
 export default
 
 	props:
+		background: String
 		closeable: Boolean
 		fill: Boolean
 		position: String
@@ -35,8 +36,10 @@ export default
 			margin: @margin
 		]
 
-		styles: ->
+		styles: -> {
 			borderRadius: "#{@radius}px"
+			@background
+		}
 
 	methods:
 		close: ->
@@ -204,6 +207,6 @@ gutter = 20px
 
 .scroller
 	height 100%
-
+	overflow auto
 
 </style>

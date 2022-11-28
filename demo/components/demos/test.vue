@@ -1,5 +1,5 @@
 <template lang='pug'>
-  cloak-modal(v-bind='$props'): .modal
+  cloak-modal(v-bind='$props' background='#101010'): .modal
     h3 Modal Contents
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia venenatis lectus, ac cursus ligula. Sed nec enim urna. Nullam congue eros elit, eget consectetur nunc accumsan quis.
     button Button
@@ -17,11 +17,8 @@ export default
 <style lang='stylus' scoped>
 
 .modal
-  background #101010
   width 400px
-  height 100%
   max-width calc(100vw - 40px)
-  box-shadow 0 0 30px rgba(0, 0, 0, .2)
   padding 30px
 
 button
