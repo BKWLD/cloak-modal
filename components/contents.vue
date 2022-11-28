@@ -191,7 +191,7 @@ gutter = 20px
 			&.margin
 				right gutter
 				left gutter
-				width clac(100vw - 40px)
+				width calc(100vw - 40px)
 				max-width calc(100vw - 40px)
 
 	&.center
@@ -207,7 +207,7 @@ gutter = 20px
 			height 100vh
 
 			&.margin
-				width clac(100vw - 40px)
+				width calc(100vw - 40px)
 				height calc(100vh - 40px)
 
 .full .contents
