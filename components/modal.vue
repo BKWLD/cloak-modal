@@ -22,16 +22,13 @@
 			:scrollLock='scrollLock'
 			:transition='transition')
 
-			//- TODO: convert this to a slot
-			//- slot
-			test-data
+			slot
 
 </template>
 
 <script lang='coffee'>
 import Shade from './shade'
 import Contents from './contents'
-import TestData from '~/components/demos/test'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 export default
@@ -39,7 +36,6 @@ export default
 	components: {
 		Shade,
 		Contents
-		TestData
 	}
 
 	props:

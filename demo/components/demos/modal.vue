@@ -79,11 +79,8 @@ div
 </template>
 
 <script lang='coffee'>
-import Modal from '/components/cloak-modal'
-
+import TestModal from './test'
 export default
-
-  components: { Modal }
 
   data: ->
     opened: false
@@ -99,7 +96,7 @@ export default
 
   methods:
     open: () ->
-      await @$mountOnBody Modal,
+      await @$mountOnBody TestModal,
         parent: @
         propsData:
           position: @position
