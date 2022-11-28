@@ -22,6 +22,8 @@ export default
 
 	props:
 
+		background: String
+
 		closeable:
 			type: Boolean
 			default: true
@@ -55,8 +57,10 @@ export default
 			margin: @margin
 		]
 
-		styles: ->
+		styles: -> {
 			borderRadius: "#{@radius}px"
+			@background
+		}
 
 	methods:
 		close: ->
