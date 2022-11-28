@@ -22,9 +22,7 @@
 			:scrollLock='scrollLock'
 			:transition='transition')
 
-			//- TODO: convert this to a slot
-			//- slot
-			test-data
+			slot
 
 </template>
 

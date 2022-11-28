@@ -1,16 +1,16 @@
 <template lang='pug'>
-  div
+  cloak-modal(v-bind='$props')
     h3 Modal Contents
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia venenatis lectus, ac cursus ligula. Sed nec enim urna. Nullam congue eros elit, eget consectetur nunc accumsan quis.
     button Button
 </template>
 
 <script lang='coffee'>
-
+import CloakModal from '../../../components/modal'
 export default
 
-  data: ->
-    loaded: true
+  # Support all props
+  props: { ...CloakModal.props }
 
 </script>
 
