@@ -1,13 +1,18 @@
 <template lang='pug'>
 
 	//- TODO: better naming conventions
-	.wrapper(:class='classes' :style='styles')
+	.contents(:class='classes' :style='styles')
 
-		//- TODO: X icon
-		.close(v-if='closeable == "true"' @click='close()') Close
+		//- Content pane
+		.scroller(ref='scroller'): slot
 
-		.scroller(ref='scroller')
-			slot
+		//- Make close icon slot-able
+		.close(v-if='closeable == "true"' @click='close()')
+			slot(name='close')
+
+				//- Default close icon
+				| <svg class="close-icon" enable-background="new 0 0 16.7 16.7" viewBox="0 0 16.7 16.7" xmlns="http://www.w3.org/2000/svg"><path d="m7.9-3h1v22.6h-1z" transform="matrix(.7071 -.7071 .7071 .7071 -3.4602 8.3532)"/><path d="m-3 7.9h22.6v1h-22.6z" transform="matrix(.7071 -.7071 .7071 .7071 -3.4602 8.3533)"/></svg>
+
 
 </template>
 
@@ -67,13 +72,9 @@ export default
 // TODO: vars.styl
 gutter = 20px
 
-.wrapper
+.contents
 	position fixed
-	background #101010
 	z-index 2
-	width calc(100% - 40px)
-	max-width 400px
-	box-shadow 0 0 30px rgba(0, 0, 0, .2)
 	overflow hidden
 
 	&.top-left
@@ -209,7 +210,7 @@ gutter = 20px
 				width clac(100vw - 40px)
 				height calc(100vh - 40px)
 
-.full .wrapper
+.full .contents
 	height 100vh
 
 .close
@@ -218,9 +219,14 @@ gutter = 20px
 	right 20px
 	cursor pointer
 
+// Size the close and icon and make it inherit the color
+.close-icon
+	width 20px
+.close-icon path
+	fill currentColor
+
 .scroller
 	height 100%
-	padding 30px
 
 
 </style>
