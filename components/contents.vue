@@ -21,34 +21,13 @@
 export default
 
 	props:
-
 		background: String
-
-		closeable:
-			type: Boolean
-			default: true
-
-		fill:
-			type: Boolean
-			default: false
-
-		position:
-			type: String,
-			default: 'center'
-			validator: (val) -> val in ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'top', 'bottom', 'center']
-
-		radius:
-			type: String
-			default: '0'
-
-		margin:
-			type: Boolean
-			default: true
-
-		transition:
-			type: String
-			default: "fade"
-			validator: (val) -> val in ['fade', 'slide', 'bounce']
+		closeable: Boolean
+		fill: Boolean
+		position: String
+		radius: String
+		margin: Boolean
+		transition: String
 
 	computed:
 		classes: -> [
