@@ -69,11 +69,7 @@ gutter = 20px
 
 .wrapper
 	position fixed
-	background #101010
 	z-index 2
-	width calc(100% - 40px)
-	max-width 400px
-	box-shadow 0 0 30px rgba(0, 0, 0, .2)
 	overflow hidden
 
 	&.top-left
@@ -220,7 +216,6 @@ gutter = 20px
 
 .scroller
 	height 100%
-	padding 30px
 
 
 </style>
