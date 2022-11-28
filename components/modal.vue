@@ -2,9 +2,9 @@
 
 .cloak-modal
 
-	transition(name='fade' v-if='overlay == "true"')
+	transition(name='fade' v-if='overlay')
 		shade(
-			v-if='shade && opened'
+			v-if='opened'
 			@close='close'
 			v-bind=`{
 				closeable,
@@ -63,10 +63,6 @@ export default
 				'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left',
 				'right', 'top', 'bottom', 'center'
 			]
-
-		shade:
-			type: Boolean
-			default: true
 
 		radius:
 			type: String
