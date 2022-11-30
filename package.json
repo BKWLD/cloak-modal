@@ -1,6 +1,6 @@
 {
 	"name": "@cloak-app/modal",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Vue component for opening a modals & locking the viewport",
 	"repository": "git@github.com:BKWLD/cloak-modal.git",
 	"author": "Bukwild <info@bukwild.com>",
