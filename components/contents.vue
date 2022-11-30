@@ -102,12 +102,12 @@ gutter = 20px
 			top 0
 			bottom 0
 			transform translateY(0)
-			height 100vh
+			height calc(100vh - var(--vh-offset, 0px))
 
 			&.margin
 				top gutter
 				bottom gutter
-				height calc(100vh - 40px)
+				height calc(100vh - var(--vh-offset, 0px) - 40px)
 
 	&.right
 		top 50%
@@ -123,12 +123,12 @@ gutter = 20px
 			top 0
 			bottom 0
 			transform translateY(0)
-			height 100vh
+			height calc(100vh - var(--vh-offset, 0px))
 
 			&.margin
 				top gutter
 				bottom gutter
-				height calc(100vh - 40px)
+				height calc(100vh - var(--vh-offset, 0px) - 40px)
 
 	&.top
 		top 0
@@ -184,14 +184,14 @@ gutter = 20px
 
 		&.fill
 			width 100vw
-			height 100vh
+			height calc(100vh - var(--vh-offset, 0px))
 
 			&.margin
 				width calc(100vw - 40px)
-				height calc(100vh - 40px)
+				height calc(100vh - var(--vh-offset, 0px) - 40px)
 
 .full .contents
-	height 100vh
+	height calc(100vh - var(--vh-offset, 0px))
 
 .close
 	position absolute

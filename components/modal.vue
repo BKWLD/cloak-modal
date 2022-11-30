@@ -35,6 +35,7 @@
 import Shade from './shade'
 import Contents from './contents'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import vhCheck from 'vh-check'
 
 export default
 
@@ -95,6 +96,7 @@ export default
 	data: -> opened: false
 
 	mounted: ->
+		vhCheck()
 		@open()
 		if @autoClose != 'none'
 			@$wait @autoCloseSeconds, =>
